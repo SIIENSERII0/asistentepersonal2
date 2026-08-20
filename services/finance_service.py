@@ -1,15 +1,14 @@
 import requests
 import re
-
 def get_market_data():
     """Obtiene la cotización actual usando endpoints web sin bloqueos (Gratis, sin API Key)."""
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
     # Bitcoin from CoinGecko
     try:
-        btc_res = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd", headers=headers, timeout=10)
-        btc_price = btc_res.json()["bitcoin"]["USD"]
-        btc_str = f"- Bitcoin: {btc_price:,.2f} "USD"
+        btc_res = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur", headers=headers, timeout=10)
+        btc_price = btc_res.json()["bitcoin"]["eur"]
+        btc_str = f"- Bitcoin: {btc_price:,.2f} €"
     except Exception as e:
         btc_str = f"- Bitcoin: Error ({e})"
         
