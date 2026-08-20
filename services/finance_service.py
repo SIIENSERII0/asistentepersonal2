@@ -8,8 +8,8 @@ def get_market_data():
     # Bitcoin from CoinGecko
     try:
         btc_res = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd", headers=headers, timeout=10)
-        btc_price = btc_res.json()["bitcoin"]["usd"]
-        btc_str = f"- Bitcoin: {btc_price:,.2f} USD"
+        btc_price = btc_res.json()["bitcoin"]["eur"]
+        btc_str = f"- Bitcoin: {btc_price:,.2f} €"
     except Exception as e:
         btc_str = f"- Bitcoin: Error ({e})"
         
