@@ -1,5 +1,6 @@
 import requests
 import re
+
 def get_market_data():
     """Obtiene la cotización actual usando endpoints web sin bloqueos (Gratis, sin API Key)."""
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
